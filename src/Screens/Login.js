@@ -2,26 +2,25 @@ import React from 'react';
 import {
   AsyncStorage, Button, StyleSheet, View,
 } from 'react-native';
+import styled from 'styled-components';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const StyledView = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
-const SignInScreen = ({ navigation }) => {
+const Login = ({ navigation }) => {
   const signInAsync = async () => {
     await AsyncStorage.setItem('userToken', 'abc');
     navigation.navigate('Main');
   };
 
   return (
-    <View style={styles.container}>
+    <StyledView>
       <Button title="Sign in!" onPress={signInAsync} />
-    </View>
+    </StyledView>
   );
 };
 
-export default SignInScreen;
+export default Login;

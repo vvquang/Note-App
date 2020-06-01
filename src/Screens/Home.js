@@ -1,41 +1,31 @@
 import React from 'react';
-import {
-  AsyncStorage,
-  Button,
-  StyleSheet,
-  View,
-} from 'react-native';
+import { AsyncStorage, Button, Text } from 'react-native';
+import styled from 'styled-components';
+import I18n from '~/Locales/I18n';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const StyledView = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
-class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Welcome to the app!',
+const HomeScreen = ({ navigation }) => {
+  const showMoreApp = () => {
+    navigation.navigate('Dashboard');
   };
 
-  _showMoreApp = () => {
-    this.props.navigation.navigate('Other');
-  };
-
-  _signOutAsync = async () => {
+  const signOutAsync = async () => {
     await AsyncStorage.clear();
-    this.props.navigation.navigate('Auth');
+    navigation.navigate('Auth');
   };
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Button title="Show me more of the app" onPress={this._showMoreApp} />
-        <Button title="Actually, sign me out :)" onPress={this._signOutAsync} />
-      </View>
-    );
-  }
-}
+  return (
+    <StyledView>
+      <Text>{I18n.t('hello')}</Text>
+      <Button title='Dashboard' onPress={showMoreApp} />
+      <Button title='Actually, sign me out :)' onPress={signOutAsync} />
+    </StyledView>
+  );
+};
 
 export default HomeScreen;

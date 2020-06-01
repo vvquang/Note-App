@@ -6,14 +6,13 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import styled from 'styled-components';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const StyledView = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
 const AuthLoadingScreen = ({ navigation }) => {
   useEffect(() => {
@@ -30,10 +29,10 @@ const AuthLoadingScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <StyledView>
       <ActivityIndicator />
-      <StatusBar barStyle='default' />
-    </View>
+      <StatusBar barStyle="default" />
+    </StyledView>
   );
 };
 
