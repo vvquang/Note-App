@@ -18,8 +18,10 @@ const StyledView = styled.View`
   align-items: center;
 `;
 
-export default function TabBarButton({ routeName, onPress, onLongPress, title, accessibilityLabel, ...restProps }) {
-  console.log('restProps: ', restProps)
+export default function TabBarButton({
+  routeName, onPress, onLongPress, title, accessibilityLabel, ...restProps
+}) {
+  console.log('restProps: ', restProps);
 
   // const { options } = descriptors[route.key];
 

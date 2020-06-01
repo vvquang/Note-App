@@ -8,12 +8,10 @@ const StyledView = styled.View`
   align-items: center;
 `;
 
-const Categorys = () => {
-  return (
-    <StyledView>
-      <Text>Categorys...</Text>
-    </StyledView>
-  );
-};
+const Categorys = () => (
+  <StyledView>
+    <Text>Categorys...</Text>
+  </StyledView>
+);
 
 export default Categorys;

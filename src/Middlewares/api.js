@@ -8,7 +8,7 @@ const callApi = async (
   endpoint,
   options = {},
   method = 'POST',
-  headers = {}
+  headers = {},
 ) => {
   // console.log({
   //   method,
@@ -51,7 +51,7 @@ export default (store) => (next) => async (action) => {
   }
   if (!types.every((type) => isString(type))) {
     throw new Error(
-      'Expected action types to be strings. And action of this type is valid'
+      'Expected action types to be strings. And action of this type is valid',
     );
   }
 
@@ -74,7 +74,7 @@ export default (store) => (next) => async (action) => {
       actionWith({
         error: error.message || 'Something wrong!!!',
         type: failureType,
-      })
+      }),
     );
   }
 };

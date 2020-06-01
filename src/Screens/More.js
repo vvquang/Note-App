@@ -8,12 +8,10 @@ const StyledView = styled.View`
   align-items: center;
 `;
 
-const More = ({ navigation }) => {
-  return (
-    <StyledView>
-      <Text>More...</Text>
-    </StyledView>
-  );
-}; 
+const More = ({ navigation }) => (
+  <StyledView>
+    <Text>More...</Text>
+  </StyledView>
+);
 
 export default More;

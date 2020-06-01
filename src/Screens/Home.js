@@ -22,8 +22,8 @@ const HomeScreen = ({ navigation }) => {
   return (
     <StyledView>
       <Text>{I18n.t('hello')}</Text>
-      <Button title='Dashboard' onPress={showMoreApp} />
-      <Button title='Actually, sign me out :)' onPress={signOutAsync} />
+      <Button title="Dashboard" onPress={showMoreApp} />
+      <Button title="Actually, sign me out :)" onPress={signOutAsync} />
     </StyledView>
   );
 };
