@@ -21,12 +21,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
   
-     # installation and build then run test
+    # installation and build then run test
     - name: yarn install
       run: yarn install 
         
-    - name: Build
-      run: yarn build
-
+    # test eslint
+    - name: Eslint
+      run: yarn lint 
+    
     # - name: Test
     #   run: yarn test --watchAll=false
